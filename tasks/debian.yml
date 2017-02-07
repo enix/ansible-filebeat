@@ -1,0 +1,29 @@
+---
+- name: 'Installing APT dependencies'
+  apt:
+    pkg: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+
+- name: Copy gpg key
+  copy:
+    src: "{{ filebeat_gpg_url }}"
+    dest: "/tmp/{{ filebeat_gpg_url }}"
+
+- name: Add elastic gpg key
+  apt_key:
+    file: "/tmp/{{ filebeat_gpg_url }}"
+
+- name: Add beats APT repository
+  apt_repository:
+    repo: "{{ filebeat_apt_repo }}"
+    state: present
+    update_cache: yes
+
+- name: Install filebeat
+  apt:
+    name: filebeat
+    state: "{{ filebeat_package_state }}"
+  notify:
+    - restart filebeat

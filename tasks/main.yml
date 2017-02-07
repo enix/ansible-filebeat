@@ -1,0 +1,14 @@
+---
+- include: debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include: redhat.yml
+  when: ansible_os_family == 'RedHat'
+
+- name: Prepare filebeat config file
+  template: src=filebeat-config.yml.j2 dest=/etc/filebeat/filebeat.yml
+  notify:
+    - restart filebeat
+
+- name: Start and enable filebeat service
+  service: name=filebeat enabled=yes state=started

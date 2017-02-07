@@ -1,0 +1,12 @@
+filebeat:
+  prospectors:
+    {{ filebeat_prospectors | to_nice_yaml | indent(4) }}
+
+output:
+  logstash:
+    enabled: {{ filebeat_logstash_enabled }}
+
+    index: {{ filebeat_logstash_index }}
+
+    hosts:
+      {{ filebeat_logstash_hosts | to_nice_yaml | indent(6) }}
