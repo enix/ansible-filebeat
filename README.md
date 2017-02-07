@@ -35,13 +35,20 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: Restless-ET.filebeat,
+         - { role: filebeat,
              filebeat_prospectors:
                - {
                  document_type: syslog,
                  paths: ['/var/log/syslog']
                }
            }
+
+Or can be configured in inventory files this way using oneliner:
+```
+[all:vars]
+filebeat_logstash_hosts=["toto:5004"]
+filebeat_prospectors=[{"input_type": "log","paths": ["/var/log/apache2/*.log"], "document_type": "apache"}, {"input_type": "log","paths": ["/var/log/syslog","/var/log/messages","/var/log/*.log"],"document_type": "syslog"}]
+```
 
 TODO
 -----
