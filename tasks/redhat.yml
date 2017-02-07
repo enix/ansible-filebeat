@@ -5,9 +5,9 @@
     key: "{{ filebeat_gpg_url }}"
 
 #- name: Create beats yum repo
-#  yumrepo:
+#  yum_repository:
 #    name: beats
-#    baseurl: "{{ filebeat_repo_url }}"
+#    baseurl: "{{ filebeat_yum_repo_url }}"
 #    enabled: yes
 #    gpgcheck: yes
 #    gpgkey: "{{ filebeat_gpg_url }}"
