@@ -59,7 +59,7 @@ List of stuff to improve in this role
 - check that filebeat service really enabled on system (not the case with basic installation) and so will start on boot
 - readd tls stuff when needed
 - A more complete version but without template of configuration is available here https://github.com/DavidWittman/ansible-filebeat.
-
+- Move out repository setup into dedicated role using depends.
 
 License
 -------

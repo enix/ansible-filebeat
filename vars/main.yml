@@ -1,8 +1,2 @@
 ---
-filebeat_apt_repo: "deb http://artifacts.elastic.co/packages/5.x/apt stable main"
-
-filebeat_yum_repo_url: https://artifacts.elastic.co/packages/5.x/yum
-
-filebeat_gpg_url: GPG-KEY-elasticsearch
-
 filebeat_package_state: latest
