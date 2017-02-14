@@ -1,4 +1,4 @@
-enix/ansible-filebeat
+enix/filebeat
 =========
 
 An Ansible role for Logstash's Filebeat log shipper.
@@ -26,7 +26,10 @@ Role Variables
 Dependencies
 ------------
 
-No dependecies. :-)
+Ansible roles, can be pulled by ansible-galaxy or by hand in roles/
+
+- `Enix/elastic-repo`: https://gitlab.enix.org/ansible/ansible-elastic-repo.git.
+
 
 Example Playbook
 ----------------
@@ -56,10 +59,8 @@ TODO
 List of stuff to improve in this role
 - make role fully working on RedHat systems (especially GPG key and repo changes)
 - make filebeat_version working again on debian with repo
-- check that filebeat service really enabled on system (not the case with basic installation) and so will start on boot
 - readd tls stuff when needed
 - A more complete version but without template of configuration is available here https://github.com/DavidWittman/ansible-filebeat.
-- Move out repository setup into dedicated role using depends.
 
 License
 -------
