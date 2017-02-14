@@ -1,0 +1,4 @@
+- hosts: test
+
+  roles:
+    - '.'    # The current directory itself is the role
