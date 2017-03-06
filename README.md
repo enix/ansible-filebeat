@@ -57,8 +57,7 @@ TODO
 -----
 
 List of stuff to improve in this role
-- make role fully working on RedHat systems (especially GPG key and repo changes)
-- make filebeat_version working again on debian with repo
+- make filebeat_version working again
 - readd tls stuff when needed
 - A more complete version but without template of configuration is available here https://github.com/DavidWittman/ansible-filebeat.
 
