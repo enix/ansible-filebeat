@@ -1,12 +1,16 @@
-enix/filebeat
+eNiXHosting.filebeat
 =========
 
-An Ansible role for Logstash's Filebeat log shipper.
+An Ansible role to deploy Elastic [Filebeat](https://www.elastic.co/products/beats) log shipper.
 
 Requirements
 ------------
 
-Nothing worth mentioning ...
+Supported targets:
+
+- Debian 8 "Jessie"
+- RedHat EL 6/7
+
 
 Role Variables
 --------------
@@ -28,11 +32,21 @@ Dependencies
 
 Ansible roles, can be pulled by ansible-galaxy or by hand in roles/
 
-- `Enix/elastic-repo`: https://gitlab.enix.org/ansible/ansible-elastic-repo.git.
+- `eNiXHosting.elastic-repo`: https://galaxy.ansible.com/eNiXHosting/elastic-repo/.
 
 
-Example Playbook
-----------------
+Usage
+-----
+
+Clone this repo into your roles directory:
+
+    $ git clone https://gitlab.enix.org/ansible/ansible-filebeat.git roles/filebeat
+
+Or use Ansible galaxy requirements.yml
+
+    # eNiXHosting.filebeat galaxy role
+    - src: eNiXHosting.filebeat
+      name: filebeat
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
@@ -60,11 +74,12 @@ List of stuff to improve in this role
 - make filebeat_version working again
 - readd tls stuff when needed
 - A more complete version but without template of configuration is available here https://github.com/DavidWittman/ansible-filebeat.
+- Rename vars to filebeat__
 
 License
 -------
 
-MIT
+GPLv2
 
 Author Information
 ------------------
