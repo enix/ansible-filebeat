@@ -1,4 +1,9 @@
 - hosts: test
 
   roles:
-    - '../../'    # The current directory itself is the role
+    - role: '../../'
+      filebeat_prospectors:
+        - {
+          document_type: syslog,
+          paths: ['/var/log/syslog']
+        }
