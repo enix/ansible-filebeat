@@ -71,7 +71,6 @@ TODO
 -----
 
 List of stuff to improve in this role
-- make filebeat_version working again
 - readd tls stuff when needed
 - A more complete version but without template of configuration is available here https://github.com/DavidWittman/ansible-filebeat.
 - Rename vars to filebeat__
