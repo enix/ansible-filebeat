@@ -108,4 +108,4 @@ galaxy_info:
     - filebeat
 
 dependencies:
-  - eNiXHosting.elastic-repo
+  - eNiXHosting.elastic_repo
