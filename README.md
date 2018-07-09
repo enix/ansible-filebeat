@@ -9,6 +9,7 @@ Requirements
 Supported targets:
 
 - Debian 8 "Jessie"
+- Debian 9 "Stretch"
 - RedHat EL 6/7
 
 
