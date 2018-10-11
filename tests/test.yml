@@ -5,6 +5,9 @@
       elastic_repo__branch: 6.x
       filebeat_logstash_enabled: false
       filebeat_elasticsearch_enabled: true
-#      filebeat_elasticsearch_hosts:
+      filebeat_elasticsearch_hosts: ["192.168.1.1:9200", "192.168.1.2:9200"]
       filebeat_modules: ['system.yml.j2']
       filebeat_modules_sourcedir: "modules/"
+      filebeat_extra_options: |
+        xpack.monitoring.enabled: true
+        logging.level: debug

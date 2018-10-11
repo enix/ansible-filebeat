@@ -5,6 +5,8 @@ filebeat_version: latest
 #filebeat_modules: [] # List of modules configuration template files
 #filebeat_modules_sourcedir: "" # Path to find modules configuration files if different from templates/
 
+#filebeat_extra_options: # options added to filebeat
+
 filebeat_logstash_enabled: true
 filebeat_logstash_index: filebeat
 filebeat_logstash_hosts: ["localhost:5044"] # The list of downstream Logstash servers.

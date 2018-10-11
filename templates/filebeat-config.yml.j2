@@ -34,3 +34,8 @@ output:
     password: {{ filebeat_elasticsearch_password }}
 {%endif%}
 {%endif%}
+
+{% if filebeat_extra_options is defined %}
+# Additional options added by filebeat
+{{ filebeat_extra_options }}
+{%endif%}

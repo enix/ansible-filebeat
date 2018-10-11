@@ -16,6 +16,9 @@ Supported targets:
 Role Variables
 --------------
 
+- `filebeat_modules` - List of modules templates configuration files to add
+- `filebeat_modules_sourcedir` - Modules templates directory. Default: `templates/`
+- `filebeat_extra_options` - options to add at the end of configuration file
 - `filebeat_logstash_enabled` - Is Logstash output enabled. Default: `true`
 - `filebeat_logstash_index` - The index root name to write evetns to. Default: `filebeat`
 - `filebeat_logstash_hosts` - The list of downstream Logstash servers. Default: `["localhost:5044"]`
@@ -47,19 +50,21 @@ Or use Ansible galaxy requirements.yml
 
     # eNiXHosting.filebeat galaxy role
     - src: eNiXHosting.filebeat
-      name: filebeat
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: servers
       roles:
-         - { role: filebeat,
-             filebeat_prospectors:
-               - {
-                 document_type: syslog,
-                 paths: ['/var/log/syslog']
-               }
-           }
+         - role: eNiXHosting.filebeat
+           elastic_repo__branch: 6.x
+           filebeat_logstash_enabled: false
+           filebeat_elasticsearch_enabled: true
+           filebeat_elasticsearch_hosts: ["192.168.1.1:9200", "192.168.1.2:9200"]
+           filebeat_modules: ['system.yml.j2']
+           filebeat_modules_sourcedir: "modules/"
+           filebeat_extra_options: |
+             xpack.monitoring.enabled: true
+             logging.level: debug
 
 Or can be configured in inventory files this way using oneliner:
 ```
