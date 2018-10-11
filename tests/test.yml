@@ -2,8 +2,9 @@
 
   roles:
     - role: '../../'
-      filebeat_prospectors:
-        - {
-          document_type: syslog,
-          paths: ['/var/log/syslog']
-        }
+      elastic_repo__branch: 6.x
+      filebeat_logstash_enabled: false
+      filebeat_elasticsearch_enabled: true
+#      filebeat_elasticsearch_hosts:
+      filebeat_modules: ['system.yml.j2']
+      filebeat_modules_sourcedir: "modules/"

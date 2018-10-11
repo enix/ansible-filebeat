@@ -3,6 +3,12 @@ filebeat:
   prospectors:
     {{ filebeat_prospectors | to_nice_yaml | indent(4) }}
 {%endif%}
+{% if filebeat_modules is defined %}
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+{%endif%}
+
 
 output:
 {% if filebeat_logstash_enabled %}

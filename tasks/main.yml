@@ -13,5 +13,16 @@
   notify:
     - restart filebeat
 
+- name: Copy filebeat modules
+  template:
+    src: "{{ filebeat_modules_sourcedir }}/{{ item }}"
+    dest: /etc/filebeat/modules.d/{{ item | basename | regex_replace('\.j2','') }}
+    backup: true
+  with_items:
+    - "{{ filebeat_modules }}"
+  notify:
+    - restart filebeat
+
+
 - name: Start and enable filebeat service
   service: name=filebeat enabled=yes state=started
