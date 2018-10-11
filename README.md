@@ -10,23 +10,23 @@ Supported targets:
 
 - Debian 8 "Jessie"
 - Debian 9 "Stretch"
-- RedHat EL 6/7
+- RedHat EL 7
 
 
 Role Variables
 --------------
 
-- `filebeat_version` - The filebeat version to install. Defaults to: `1.0.1`
-- `filebeat_prospectors` - List of prospectors to fetch data.
-- `filebeat_logstash_enabled` - If Logstash output if enabled or not. Defaults to: `true`
-- `filebeat_logstash_index` - The index root name to write evetns to. Defaults to: `filebeat`
-- `filebeat_logstash_hosts` - The list of downstream Logstash servers. Defaults to: `["localhost:5044"]`
-- `filebeat_logstash_tls_insecure` - If the client skips verification of server certificates and host names. Defaults to: `false`
-- `filebeat_logstash_tls_certificate` - The path to your SSL client certificate.
-- `filebeat_logstash_tls_certificate_key` - The path to your SSL client certificate key.
-- `filebeat_logstash_tls_certificate_authorities` - The list of paths to root certificates for server verifications.
-- `filebeat_logstash_tls_timeout` - Network timeout in seconds. Defaults to: `15`
+- `filebeat_logstash_enabled` - Is Logstash output enabled. Default: `true`
+- `filebeat_logstash_index` - The index root name to write evetns to. Default: `filebeat`
+- `filebeat_logstash_hosts` - The list of downstream Logstash servers. Default: `["localhost:5044"]`
+- `filebeat_elasticsearch_enabled` - Is ElasticSearch output enabled. Default: `false`
+- `filebeat_elasticsearch_hosts` - The list of downstream ElasticSearch servers. Default: `["localhost:9200"]`
+- `filebeat_elasticsearch_protocol` - ElasticSearch connection protocl. Default: "http"
+- `filebeat_elasticsearch_user` - If auth enabled, provide username
+- `filebeat_elasticsearch_password` - If auth enabled, provide password
 
+**Deprecated**
+- `filebeat_prospectors` - List of prospectors to fetch data. Defaults to undef.
 
 Dependencies
 ------------

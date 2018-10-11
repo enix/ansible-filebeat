@@ -14,3 +14,14 @@ output:
     hosts:
       {{ filebeat_logstash_hosts | to_nice_yaml | indent(6) }}
 {%endif%}
+{% if filebeat_elasticsearch_enabled %}
+  elasticsearch:
+    hosts:
+      {{ filebeat_elasticsearch_hosts | to_nice_yaml | indent(6) }}
+
+    protocol: {{ filebeat_elasticsearch_protocol }}
+{% if filebeat_elasticsearch_user is defined %}
+    username: {{ filebeat_elasticsearch_user }}
+    password: {{ filebeat_elasticsearch_password }}
+{%endif%}
+{%endif%}

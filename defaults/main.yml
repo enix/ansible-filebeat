@@ -6,3 +6,9 @@ filebeat_version: latest
 filebeat_logstash_enabled: true
 filebeat_logstash_index: filebeat
 filebeat_logstash_hosts: ["localhost:5044"] # The list of downstream Logstash servers.
+
+filebeat_elasticsearch_enabled: false
+filebeat_elasticsearch_hosts: ["localhost:9200"]
+filebeat_elasticsearch_protocol: "http"
+#filebeat_elasticsearch_user:
+#filebeat_elasticsearch_password
