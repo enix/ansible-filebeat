@@ -23,6 +23,9 @@
   notify:
     - restart filebeat
 
-
 - name: Start and enable filebeat service
-  service: name=filebeat enabled=yes state=started
+  service:
+    name: filebeat
+    enabled: yes
+    state: started
+  changed_when: False
