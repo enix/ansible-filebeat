@@ -1,8 +1,11 @@
+{% if filebeat_prospectors is defined %}
 filebeat:
   prospectors:
     {{ filebeat_prospectors | to_nice_yaml | indent(4) }}
+{%endif%}
 
 output:
+{% if filebeat_logstash_enabled %}
   logstash:
     enabled: {{ filebeat_logstash_enabled }}
 
@@ -10,3 +13,4 @@ output:
 
     hosts:
       {{ filebeat_logstash_hosts | to_nice_yaml | indent(6) }}
+{%endif%}

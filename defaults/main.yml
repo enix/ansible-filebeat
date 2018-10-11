@@ -1,13 +1,8 @@
 ---
 filebeat_version: latest
 
-filebeat_prospectors: [] # List of prospectors to fetch data.
+#filebeat_prospectors: [] # List of prospectors to fetch data.
 
 filebeat_logstash_enabled: true
 filebeat_logstash_index: filebeat
 filebeat_logstash_hosts: ["localhost:5044"] # The list of downstream Logstash servers.
-filebeat_logstash_tls_insecure: false
-filebeat_logstash_tls_certificate: ~ # The path to your SSL client certificate.
-filebeat_logstash_tls_certificate_key: ~ # The path to your SSL client certificate key.
-filebeat_logstash_tls_certificate_authorities: [] # The paths to root certificates for server verifications.
-filebeat_logstash_tls_timeout: 15 # Network timeout in seconds.
